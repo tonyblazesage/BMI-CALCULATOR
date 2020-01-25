@@ -1,0 +1,88 @@
+using System;
+
+namespace first_app
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("SIMPLE BMI CALCULATOR");
+            Console.WriteLine("=====================");
+            Console.WriteLine("       ");
+
+
+            //user input defined
+
+            Console.WriteLine("Enter Name: ");
+            String name = Console.ReadLine();
+
+
+            Console.Write(" Gender (male/female) :  ");
+            String gender = Console.ReadLine();
+
+            Console.Write(" Enter weight in kg: ");
+            int kg;
+            kg = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write(" Enter Height in Cm: ");
+            double m; 
+            m = Convert.ToInt32(Console.ReadLine());
+
+
+
+           double bmi;
+            bmi = kg / (Math.Pow((m/100), 2));
+
+
+            //condition statements female
+
+            if (bmi < 19 & gender == "female" || gender == "Female")
+            {
+                Console.WriteLine(bmi + "is your weight and needs attention");
+                Console.WriteLine(name + " You are under weight");
+            }
+          /*  else
+            {
+                Console.WriteLine("enter name");
+            }*/
+            
+
+            if (bmi >= 18.5 || bmi< 24.9 & gender == "female" || gender == "Female")
+            {
+                Console.WriteLine(bmi + "is your weight!!!   Nice   !!  you are awsome");
+                Console.WriteLine(name + " yourvweight is Normal");
+            }
+
+            if (bmi >=25 & gender =="female" || gender=="Female" )
+            {
+                Console.WriteLine(bmi + "is your weight and needs attention");
+                Console.WriteLine(name + "you are over weight");
+            }
+
+            //condition statements male
+
+            if (bmi < 18.5 & gender == "Male" || gender == "male")
+            {
+                Console.WriteLine(bmi + "is your weight and needs attention");
+                Console.WriteLine(name + " You are under weight");
+            }
+
+            if (bmi >= 18.5 && bmi < 24.9 & gender == "Male" || gender == "male")
+            {
+                Console.WriteLine(bmi + "is your weight!!!   Nice   !!  you are awsome");
+                Console.WriteLine(name + " yourvweight is Normal");
+            }
+
+            if (bmi >= 25 & gender == "Male" || gender == "male")
+            {
+                Console.WriteLine(bmi + "is your weight and needs attention");
+                Console.WriteLine(name + "you are over weight");
+            }
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
